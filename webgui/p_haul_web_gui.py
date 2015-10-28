@@ -50,6 +50,7 @@ def index():
 
 @APP.route('/partners')
 def partners():
+    myself  = flask.request.remote_addr
     result = [{"name": "First Host (%s)" %
                myself, "address": "http://%s:8080" %
                myself}, {"name": "Second Host (%s)" %

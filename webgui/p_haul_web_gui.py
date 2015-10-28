@@ -29,7 +29,7 @@ import phaul.xem_rpc as ph_xem_rpc
 
 default_port = 8080
 partner = "localhost"
-myself = "localhost"
+myself = "192.168.122.201"
 rpc_port = 12345
 
 APP = flask.Flask(__name__)
@@ -50,7 +50,6 @@ def index():
 
 @APP.route('/partners')
 def partners():
-    myself  = flask.request.remote_addr
     result = [{"name": "First Host (%s)" %
                myself, "address": "http://%s:8080" %
                myself}, {"name": "Second Host (%s)" %
